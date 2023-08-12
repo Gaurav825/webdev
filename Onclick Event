@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Event Handling Example</title>
+</head>
+<body>
+  
+  <button id="myButton">Click me!</button>
+  <p id="id1"></p>
+
+  <script>
+    // Get a reference to the button element
+    const b = document.getElementById("myButton");
+
+    // Define the function you want to invoke
+    function handleClick() {
+     document.getElementById('id1').textContent = "hi how are you?";
+    }
+
+    // Attach the function to the "click" event of the button
+    b.addEventListener("click", handleClick);
+  </script>
+</body>
+</html>
