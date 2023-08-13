@@ -1,0 +1,14 @@
+// javascript has dynamic type casting 
+var a=5;
+var b="6";
+console.log(a+b);// "56" concatnation
+console.log(a*b);//30
+console.log(a-b);//-1
+console.log(5+"hi");// "5hi"
+console.log(5*"hi");//NaN
+console.log("hi i am \"gauarv\"")// escape charcter
+var s="Gaurav";
+console.log(s.indexOf('a'));
+console.log(s.indexOf('ra'));
+console.log(s.charAt(0));
+console.log(s.indexOf(9));// undefined
