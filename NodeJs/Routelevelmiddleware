@@ -1,0 +1,38 @@
+const express=require('express');
+const { reset } = require('nodemon');
+const app = express();
+const reqFilter=require('./middle.js');
+const route=express.Router();
+
+route.use(reqFilter);
+app.get('',(req,res)=>{
+    res.send('homepage');
+
+})
+route.get('/about',(req,res)=>{
+    res.send('aboutpage');
+
+})
+app.get('/contact',(req,res)=>{
+    res.send('contactpage');
+
+})
+app.use('/',route);
+
+app.listen(3000);
+
+//   middle.js file
+module.exports = (req, res, next) => {
+    const age = req.query.age;
+    if (!age) {
+      return res.status(400).send("Please provide age");
+    }
+    const ageNumber = parseInt(age, 10);
+    if (isNaN(ageNumber) || ageNumber < 0) {
+      return res.status(400).send("Invalid age");
+    }
+    if (ageNumber < 18) {
+      return res.status(403).send("Sorry, minors are not allowed");
+    }
+    next();
+  };
