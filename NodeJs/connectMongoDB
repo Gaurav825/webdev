@@ -1,0 +1,23 @@
+const { MongoClient } = require('mongodb');
+const url = 'mongodb://localhost:27017';
+const database = 'ecom';
+
+async function getData() {
+    const client = new MongoClient(url, { useNewUrlParser: true, useUnifiedTopology: true, family: 4 });
+
+  try {
+    await client.connect();
+    console.log('Connected to the database');
+
+    const db = client.db(database);
+    const collection = db.collection('products');
+
+    const response = await collection.find({}).toArray();
+    console.log(response);
+  } finally {
+    await client.close();
+    console.log('Connection closed');
+  }
+}
+
+getData().catch(err => console.error(err));
