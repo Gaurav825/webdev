@@ -1,0 +1,33 @@
+const express=require('express');
+const { reset } = require('nodemon');
+const app = express();
+
+// apply middleware
+// Middleware 
+const reqFilter=((req, res, next) => {
+    if(!req.query.age)
+    {
+        res.send("enter age");
+    }
+    else if(req.query.age<18)
+    {
+        res.send("minor not proceed");
+    }
+    else 
+    next(); 
+  });
+  app.use(reqFilter);
+app.get('',(req,res)=>{
+    res.send('homepage');
+
+})
+app.get('/about',(req,res)=>{
+    res.send('aboutpage');
+
+})
+app.get('/contact',(req,res)=>{
+    res.send('contactpage');
+
+})
+
+app.listen(3000);
