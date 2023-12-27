@@ -1,0 +1,57 @@
+//App.js component
+import { useState } from "react";
+function App() {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [mob, setMob] = useState("");
+  const [showName, setShowName] = useState(false);
+
+  function handleSubmit(e) {
+    e.preventDefault();
+    setShowName(true);
+  }
+  return (
+    <div className="App">
+      <form>
+        <label>Name:</label>
+        <input
+          name="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+        <br></br>
+        <label>Email:</label>
+        <input
+          name="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+        <br></br>
+        <label>Mobile:</label>
+        <input
+          name="mob"
+          value={mob}
+          onChange={(e) => setMob(e.target.value)}
+        />
+        <br></br>
+        <button onClick={handleSubmit} type="submit">
+          Submit
+        </button>
+      </form>
+      {/* Checks the condition if showName is 
+        true, which will be true only if 
+        we click on the submit button */}
+      {showName === true && (
+  <div>
+    <p>You have submitted.</p>
+    <p>Name: {name}</p>
+   
+    <p>Email: {email}</p>
+    <p>Mobile: {mob}</p>
+  </div>
+)}
+    </div>
+  );
+}
+
+export default App;
