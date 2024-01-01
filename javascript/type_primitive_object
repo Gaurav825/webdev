@@ -20,3 +20,13 @@ const f=function(){
   
 }
 console.log(typeof f);// Function object
+------------------------------------------
+// primitive goes to stack and non primitive goes heap
+const obj1={
+  name:"gaurav",
+  age:123,
+  email:"user@gmail.com"
+}
+obj2=obj1;
+obj2.email="nga22e33877@gmail.com"
+console.log(obj1.email);//nga22e33877@gmail.com
