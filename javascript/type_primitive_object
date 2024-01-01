@@ -1,0 +1,22 @@
+// // primitive type (call by value)
+// String ,Number,Boolean,null,undefined,Symbol,BigInt
+// // ReferenceType (Non primitive)
+// Array,Object,Function
+// // dynamic type js
+let id1=Symbol('123')
+let id2=Symbol('123')
+console.log(id1==id2)
+console.log(id1)
+const x=99999999999999999999999999999999n
+console.log(typeof x)//bigint
+console.log(typeof null)// object
+
+
+// non primitive
+const arr=[1,2,3,4]// object
+console.log(typeof arr);// object
+const f=function(){
+  console.log("hi");
+  
+}
+console.log(typeof f);// Function object
