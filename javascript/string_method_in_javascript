@@ -1,0 +1,20 @@
+// string method in javascript
+let s=new String("gaurav");
+console.log(s.toUpperCase());//GAURAV
+console.log(s.charAt(2));// u
+console.log(s.indexOf('a'));1
+console.log(s.substring(-2,4));// aur (less than 0 as treat 0)
+console.log(s.slice(-3,-1))// ra  note->first paramer should be less 
+console.log(s.substr(0,3));// first parameter is index and second is length
+console.log(s.replace("au","rv")); // remove fisrt occur au with rv
+console.log(s.replaceAll("a","v"));// reove all a with v
+console.log(s.toLowerCase());
+console.log(s.concat(" Kumar"));
+console.log("        gaurav     ".trim())
+console.log("        gaurav     ".trimStart())// remove only space in front
+console.log("        gaurav     ".trimEnd())// remove only space in front
+
+console.log("3".padStart(4,"1"));//1113
+console.log("3".padEnd(4,"1"));//3111
+console.log("guarav,kumar,coding ,is love".split(','));
+//[ 'guarav', 'kumar', 'coding ', 'is love' ]
